@@ -467,22 +467,3 @@ pub fn crypt(password: &[u8], salt: &Salt) -> String {
 
 	output(permutation(iterations(&salt, &schedule(password)), salt.bits), &salt)
 }
-
-// _ufc_setup_salt_r
-// _ufc_mk_keytab_r
-// _ufc_do_finalperm_r
-// _ufc_output_conversion_r
-//
-//  struct crypt_data
-//  {
-//    char keysched[16 * 8];
-//    char sb0[32768];
-//    char sb1[32768];
-//    char sb2[32768];
-//    char sb3[32768];
-//    /* end-of-aligment-critical-data */
-//    char crypt_3_buf[14];
-//    char current_salt[2];
-//    long int current_saltbits;
-//    int  direction, initialized;
-//  };
